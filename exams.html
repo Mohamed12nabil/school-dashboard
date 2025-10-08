@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>إدارة الامتحانات ودرجات الطلاب</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="exams.js" defer></script>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html">🏠 الرئيسية</a>
+      <a href="students.html">👨‍🎓 الطلاب</a>
+      <a href="attendance.html">📋 الحضور</a>
+      <a href="payments.html">💰 الشهريات</a>
+      <a href="exams.html" class="active">📝 الامتحانات</a>
+    </nav>
+
+    <main>
+      <!-- إضافة امتحان جديد -->
+      <section class="card">
+        <h2>إضافة امتحان جديد</h2>
+
+        <label>اسم المادة:</label>
+        <input type="text" id="examSubject" placeholder="مثال: الرياضيات" />
+
+        <label>التاريخ:</label>
+        <input type="date" id="examDate" />
+
+        <label>الدرجة الكلية:</label>
+        <input type="number" id="maxScore" placeholder="مثال: 100" />
+
+        <button id="addExamBtn">💾 حفظ الامتحان</button>
+      </section>
+
+      <!-- رصد الدرجات -->
+      <section class="card">
+        <h2>رصد الدرجات</h2>
+
+        <label>اختر الامتحان:</label>
+        <select id="examSelect"></select>
+
+        <label>اختر الطالب:</label>
+        <select id="studentSelect"></select>
+        <label>هل حضر الطالب الامتحان؟</label>
+        <select id="studentAttended">
+          <option value="yes">نعم</option>
+          <option value="no">لا</option>
+        </select>
+
+        <label>الدرجة:</label>
+        <input type="number" id="studentScore" placeholder="مثال: 85" />
+
+        <label>تقييم المستوى:</label>
+        <select id="studentLevel">
+          <option value="ممتاز">ممتاز</option>
+          <option value="جيد">جيد</option>
+          <option value="ضعيف">ضعيف</option>
+        </select>
+
+        <label>بلاغ للطالب:</label>
+        <textarea
+          id="studentWarning"
+          placeholder="مثلاً: الطالب لم يذاكر جيداً أو لم يحضر المراجعات"
+        ></textarea>
+
+        <button id="addScoreBtn">🧾 تسجيل الدرجة</button>
+      </section>
+
+      <!-- عرض النتائج -->
+      <section class="card">
+        <h2>نتائج الطلاب</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>الطالب</th>
+              <th>المادة</th>
+              <th>التاريخ</th>
+              <th>الدرجة</th>
+              <th>الدرجة الكلية</th>
+              <th>النتيجة</th>
+              <th>التقييم</th>
+              <th>البلاغ</th>
+            </tr>
+          </thead>
+          <tbody id="scoresBody"></tbody>
+        </table>
+      </section>
+    </main>
+  </body>
+</html>

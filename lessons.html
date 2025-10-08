@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>إدارة الدروس</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="lessons.js" defer></script>
+    <style>
+      main {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+      }
+      th {
+        background-color: #f0f0f0;
+      }
+      button {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html">🏠 الرئيسية</a>
+      <a href="students.html">👨‍🎓 الطلاب</a>
+      <a href="attendance.html">📋 الحضور</a>
+      <a href="payments.html">💰 الشهريات</a>
+      <a href="exams.html">📝 الامتحانات</a>
+      <a href="lessons.html" class="active">📚 الدروس</a>
+      <a href="dashboard.html">📊 لوحة التحكم</a>
+    </nav>
+
+    <main>
+      <section class="card">
+        <h2>إضافة درس جديد</h2>
+
+        <label>اسم الدرس:</label>
+        <input
+          type="text"
+          id="lessonName"
+          placeholder="مثال: درس الكسور العشرية"
+        />
+
+        <label>المادة:</label>
+        <input type="text" id="lessonSubject" placeholder="مثال: الرياضيات" />
+
+        <label>الصف:</label>
+        <input type="text" id="lessonClass" placeholder="مثال: الصف الخامس" />
+
+        <label>المدرس:</label>
+        <input type="text" id="lessonTeacher" placeholder="مثال: أ/ خالد" />
+
+        <label>تاريخ الدرس:</label>
+        <input type="date" id="lessonDate" />
+
+        <label>ملاحظات:</label>
+        <textarea
+          id="lessonNotes"
+          placeholder="مثلاً: مراجعة عامة قبل الامتحان"
+        ></textarea>
+
+        <button id="addLessonBtn">💾 حفظ الدرس</button>
+      </section>
+
+      <section class="card">
+        <h2>قائمة الدروس</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>الدرس</th>
+              <th>المادة</th>
+              <th>الصف</th>
+              <th>المدرس</th>
+              <th>التاريخ</th>
+              <th>الملاحظات</th>
+              <th>الإجراءات</th>
+            </tr>
+          </thead>
+          <tbody id="lessonsBody"></tbody>
+        </table>
+      </section>
+    </main>
+  </body>
+</html>

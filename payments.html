@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>إدارة الشهريات</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="payments.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html">🏠 الرئيسية</a>
+      <a href="student.html">👨‍🎓 الطلاب</a>
+      <a href="attendance.html">📋 الحضور</a>
+      <a href="payments.html" class="active">💰 الشهريات</a>
+    </nav>
+
+    <main>
+      <section class="card">
+        <h2>تسجيل الشهرية</h2>
+        <button id="generateReportBtn">📄 إنشاء تقرير شهري PDF</button>
+        <label>اسم الطالب:</label>
+        <select id="studentSelect"></select>
+
+        <label>الشهر:</label>
+        <input type="month" id="paymentMonth" />
+
+        <label>المبلغ (ريال):</label>
+        <input type="number" id="paymentAmount" placeholder="مثال: 300" />
+
+        <label>الحالة:</label>
+        <select id="paymentStatus">
+          <option value="مدفوع">مدفوع</option>
+          <option value="غير مدفوع">غير مدفوع</option>
+        </select>
+
+        <button id="addPaymentBtn">💾 حفظ السجل</button>
+      </section>
+
+      <section class="card">
+        <h2>قائمة الشهريات</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>الطالب</th>
+              <th>الشهر</th>
+              <th>المبلغ</th>
+              <th>الحالة</th>
+              <th>إجراءات</th>
+            </tr>
+          </thead>
+          <tbody id="paymentsBody"></tbody>
+        </table>
+      </section>
+    </main>
+  </body>
+</html>

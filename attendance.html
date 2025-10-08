@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تسجيل الحضور والغياب</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="attendance.js" defer></script>
+  </head>
+
+  <body>
+    <!-- 🟦 نافذة سجل الغياب -->
+    <div id="absenceModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h3>📅 سجل الغياب</h3>
+        <p id="absenceDetails">جاري التحميل...</p>
+      </div>
+    </div>
+
+    <header>
+      <h1>📋 الحضور والغياب حسب الصف</h1>
+      <nav>
+        <a href="index.html">الرئيسية</a>
+        <a href="student.html">الطلاب</a>
+        <a href="lessons.html">الدروس</a>
+        <a href="exams.html">الامتحانات</a>
+        <a href="attendance.html" class="active">الحضور</a>
+        <a href="payments.html">الشهريات</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <h2>تسجيل حضور جديد</h2>
+        <div class="form-grid">
+          <input id="studentName" placeholder="اسم الطالب" />
+          <input type="text" id="studentClass" placeholder="الصف الدراسي" />
+          <input type="date" id="attendanceDate" />
+          <select id="attendanceStatus">
+            <option value="حاضر">حاضر</option>
+            <option value="غائب">غائب</option>
+          </select>
+          <button id="addAttendanceBtn">تسجيل</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>عرض الحضور حسب الصف</h2>
+        <select id="filterClass">
+          <option value="الكل">الكل</option>
+        </select>
+      </section>
+
+      <section class="card">
+        <h2>سجل الحضور</h2>
+        <table id="attendanceTable">
+          <thead>
+            <tr>
+              <th>الاسم</th>
+              <th>الصف</th>
+              <th>التاريخ</th>
+              <th>الحالة</th>
+              <th>إجراءات</th>
+            </tr>
+          </thead>
+          <tbody id="attendanceBody"></tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 جميع الحقوق محفوظة - نظام إدارة المدرسة</p>
+    </footer>
+  </body>
+</html>

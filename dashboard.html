@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>لوحة التحكم</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="dashboard.js" defer></script>
+    <style>
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 15px;
+        margin: 20px;
+      }
+      .card {
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      .card h3 {
+        margin: 10px 0;
+        font-size: 18px;
+      }
+      .number {
+        font-size: 26px;
+        font-weight: bold;
+        color: #007bff;
+      }
+      canvas {
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html">🏠 الرئيسية</a>
+      <a href="students.html">👨‍🎓 الطلاب</a>
+      <a href="attendance.html">📋 الحضور</a>
+      <a href="payments.html">💰 الشهريات</a>
+      <a href="exams.html">📝 الامتحانات</a>
+      <a href="dashboard.html" class="active">📊 لوحة التحكم</a>
+    </nav>
+
+    <main>
+      <h1 style="text-align: center">📊 لوحة تحكم النظام</h1>
+
+      <div class="cards">
+        <div class="card">
+          <h3>عدد الطلاب</h3>
+          <div class="number" id="totalStudents">0</div>
+        </div>
+        <div class="card">
+          <h3>عدد الغائبين</h3>
+          <div class="number" id="totalAbsents">0</div>
+        </div>
+        <div class="card">
+          <h3>عدد الراسبين</h3>
+          <div class="number" id="totalFails">0</div>
+        </div>
+        <div class="card">
+          <h3>عدد البلاغات</h3>
+          <div class="number" id="totalWarnings">0</div>
+        </div>
+        <div class="card">
+          <h3>متوسط الدرجات</h3>
+          <div class="number" id="avgScore">0%</div>
+        </div>
+      </div>
+
+      <canvas id="scoreChart" width="400" height="200"></canvas>
+    </main>
+  </body>
+</html>

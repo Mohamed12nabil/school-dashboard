@@ -1,0 +1,196 @@
+body {
+  font-family: "Tajawal", Arial, sans-serif;
+  background: #f4f6f8;
+  margin: 0;
+  color: #333;
+  direction: rtl;
+}
+
+header {
+  background: #0077b6;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  background: #0077b6;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+button:hover {
+  background: #023e8a;
+}
+
+.hidden {
+  display: none;
+}
+
+#lessonTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#lessonTable th,
+#lessonTable td {
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+  text-align: right;
+}
+
+#lessonTable button {
+  background: #e63946;
+  margin-left: 6px;
+}
+
+#lessonTable button:hover {
+  background: #d90429;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+nav {
+  background: #023e8a;
+  padding: 10px;
+  text-align: center;
+}
+
+nav a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a.active {
+  color: #ffd60a;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+  text-align: right;
+}
+
+button {
+  cursor: pointer;
+}
+/* تنسيق أزرار جدول الحضور */
+#attendanceBody button {
+  margin: 0 5px; /* مسافة 5px يمين ويسار */
+  padding: 5px 10px; /* حجم الزر */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* ألوان مختلفة لكل نوع زر */
+#attendanceBody button:nth-child(1) {
+  background-color: #4caf50; /* تعديل */
+  color: white;
+}
+
+#attendanceBody button:nth-child(2) {
+  background-color: #f44336; /* حذف */
+  color: white;
+}
+
+#attendanceBody button:nth-child(3) {
+  background-color: #2196f3; /* سجل الغياب */
+  color: white;
+}
+/* 🟦 تصميم نافذة سجل الغياب */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  width: 350px;
+  border-radius: 10px;
+  text-align: right;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+  direction: rtl;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #333;
+}
+
+.close-btn:hover {
+  color: red;
+}
+
+#absenceDetails {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+  max-height: 250px;
+  overflow-y: auto;
+}
+#scoreChart {
+  max-width: 300px;
+  max-height: 300px;
+  display: block;
+  margin: 20px auto;
+}
